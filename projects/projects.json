@@ -1,0 +1,17 @@
+[
+  {
+    "title": "free speech survey analysis",
+    "url": "https://github.com/yourusername/free-speech-analysis",
+    "description": "Analysis of student attitudes toward free speech on campus"
+  },
+  {
+    "title": "employee satisfaction dashboard",
+    "url": "https://github.com/yourusername/employee-dashboard",
+    "description": "Interactive R Shiny dashboard for analyzing employee survey data"
+  },
+  {
+    "title": "arrest data visualization",
+    "url": "https://github.com/yourusername/arrest-visualization",
+    "description": "Data visualization project examining arrest patterns"
+  }
+]

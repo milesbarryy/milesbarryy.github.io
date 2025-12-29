@@ -1,0 +1,37 @@
+---
+title: The California Aggie: Forum to table: how seed oil paranoia can radicalize
+date: November 14, 2024
+description: Opinion piece for The California Aggie examining the connection between seed oil health claims and right-wing radicalization
+---
+
+## Why distrust of cooking oils has become a rallying cry for the far right
+
+By MILES BARRY — mabarry@ucdavis.edu
+
+In January 2025, a large group of wellness influencers, biohackers and proponents of alternative medicine descended on the Kennedy Center to celebrate Donald Trump's election with a "[seed oil-free](https://www.foxnews.com/video/6367388907112)" dinner at the Make America Healthy Again (MAHA) Inaugural Ball. 
+
+In the same month, Western restaurant chains True Food Kitchen and Sweetgreen debuted "[new protein-packed, seed oil-free](https://investor.sweetgreen.com/press/news-details/2025/Sweetgreen-Launches-New-January-Menu-Items-That-Are-All-About-Ranch/default.aspx) menu items to kick off the new year." Even the midwest's [Steak n' Shake](https://www.steaknshake.com/seed-oils/) have declared their transition away from seed oils, using beef tallow or air fryers to cook their fries instead. 
+
+Here in Davis, Reddit [debates have raged](https://www.reddit.com/r/UCDavis/comments/1mwyrx5/seed_oils/) about Segundo Dining Hall's use of seed oils, while the Instagram account for UC Davis' immensely popular Nutrition 010 class has had to clarify that seed oils [have healthful properties](https://www.instagram.com/p/DBaPZUJv9CY/), contrary to recent popular belief. Anonymous posters on the Sacramento subreddit inquire about "[seed oil free restaurants](https://www.reddit.com/r/Sacramento/comments/11bbozk/seed_oil_free_restaurants/)" in the area and UC Davis assistant professor Dr. Selina Wang was even [interviewed by The Washington Post](https://web.archive.org/web/20250311094604/https://www.washingtonpost.com/wellness/2025/03/07/healthiest-oil-seed-oils-bad/) in March to debunk myths surrounding these controversial cooking oils. 
+
+Experts seem to agree that seed oils are safe. But if you're like me — concerned about your health to a degree that could be considered neurotic — you'll likely want to examine these claims to satisfy the little voice in the back of your mind wondering: could the experts be wrong?
+
+A quick scroll through several online alternative health forums reveals that their most vocal members belong to the alt-right — meaning they're politically conservative and incredibly racist. Accounts with names like "Brutal American Adolf" post thoughtful photos of their (admittedly delicious-looking) breakfast, and advocate for daily use of aspirin to make your eyes more blue. It's a strange world of health questions — "[your thoughts on alcohol-based mouthwash?](https://drive.google.com/file/d/1S0u8NUggRGA1si3faRr8x-Rd4Zmdmd4V/view?usp=sharing)" followed by streams of hate-filled hashtags ([#MassDeportations #Now](https://drive.google.com/file/d/1fDKGLYA_hwdjOGgEwoDh3g7rtEGzYP3u/view?usp=sharing)).
+
+Between these blatantly racist posts, people on these forums argue back and forth about a plethora of crazy supplements—from methylene blue dye to desiccated thyroid extract. While they frequently disagree, everyone is united against seed oils. I'd argue that, for many people, this constant seed oil fearmongering is the first step in a sequence that begins with mainstream health podcasts and ends at cesspool groups filled with anti-vax neo-nazis. In other words, anti-seed oil messaging has become a method of right-wing radicalization
+
+At least [two](https://www.youtube.com/watch?v=F7TsXwIsje4) [guests](https://www.youtube.com/watch?v=s8tJ-R28HX8) on "The Joe Rogan Experience," the most popular podcast in the United States, have made claims about the harms of seed oils. Andrew Huberman, a podcaster and neuroscientist who boasts seven million subscribers on YouTube, also [urges caution about seed oils](https://www.seedoilscout.com/blog/what-does-huberman-lab-say-about-seed-oils). Rogan and Huberman are politically moderate, but their distrust of these cooking oils can plant seeds of doubt. If the experts — Big Pharma, Big Ag, and Academia — are secretly poisoning Americans in pursuit of profit, what else are they hiding? 
+
+This question will inevitably lead some listeners further down the rabbit hole. It's all too easy to begin researching alternative medicine practitioners who make the same claims about seed oils — and also claim [that COVID vaccines are evil](https://podcasts.apple.com/us/podcast/74-vaccine-shedding-progesterone-and-thyroid/id1525148857?i=1000543317885). The most popular of these figures is [Dr. Ray Peat](https://raypeat.com/), a University of Oregon PhD-holder who wrote prolifically about alternative nutrition practices until his death in 2022. His dietary recommendations are easy to follow; he recommends avoiding seed oils, coffee with sugar, ice cream and daily consumption of carrot salads. Dr. Peat was [one of the first nutritionists](https://web-archive.southampton.ac.uk/cogprints.org/cgi/export/eprint/6565/Simple/cogprints-eprint-6565.txt?) to demonize seed oils, and he is beloved in these forums; people tag photos of their meals that align with his recommendations: "#peaty." Ray Peat was also a conspiracy theorist. He believed that COVID-19 was nothing more than "[a standard cold and flu season](https://lowtoxinforum.com/threads/orn-3_15_21-viruses-vaccines-great-reset-genetics.39716/)," and that the "...data doesn't show any excess deaths." 
+
+The connection between seed oils and Peat-aligned, right-wing, conspiratorial views may seem baffling at first. "Alternative nutrition" tends to conjure images of granola-loving, organic-only liberal hippies, but the link reveals itself when these novel diets and extreme supplement regimens become extensions of eugenic logic.
+
+In the early 20th century, prominent eugenicists were obsessed with nutrition. John Harvey Kellogg, co-founder of the Kellogg's empire, invented corn flakes as part of his campaign against what he called "race degeneracy." For these men, dietary purity was inseparable from racial purity. Likewise, contemporary Peat-inspired wellness culture frames human betterment as a kind of purification — cleansing the body of toxins and cleansing the nation of "undesirables."
+
+[According to the USDA](https://www.usda.gov/taxonomy/term/3018), "if you can pinpoint where your food was grown and produced, you can make more informed decisions to maximize quality, freshness, and nutritional value." By the same logic, we should consider where our information comes from when evaluating non-mainstream nutritional claims like the crusade against seed oils. What begins as a harmless search for healthier eating can, for some, open the door to misinformation and extremism.
+
+---
+
+**Written by: Miles Barry — mabarry@ucdavis.edu**
+
+**Disclaimer:** The views and opinions expressed by individual columnists belong to the columnists alone and do not necessarily indicate the views and opinions held by The California Aggie.
