@@ -1,0 +1,208 @@
+name: Auto-sync Writing and Projects
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'writing/**'
+      - 'projects-content/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      
+      - name: Sync writing to posts
+        run: |
+          python3 << 'EOF'
+          import os
+          import json
+          import re
+          from datetime import datetime
+          
+          def parse_frontmatter(content):
+              """Extract YAML frontmatter from markdown"""
+              frontmatter_pattern = r'^---\s*\n(.*?)\n---\s*\n'
+              match = re.match(frontmatter_pattern, content, re.DOTALL)
+              
+              if not match:
+                  return {}
+              
+              frontmatter_text = match.group(1)
+              metadata = {}
+              
+              for line in frontmatter_text.split('\n'):
+                  if ':' in line:
+                      key, value = line.split(':', 1)
+                      metadata[key.strip()] = value.strip()
+              
+              return metadata
+          
+          # Copy all .md files from writing/ to posts/
+          writing_dir = "writing"
+          posts_dir = "posts"
+          
+          # Get all existing posts
+          posts_json_path = os.path.join(posts_dir, "posts.json")
+          if os.path.exists(posts_json_path):
+              with open(posts_json_path, 'r') as f:
+                  posts = json.load(f)
+          else:
+              posts = []
+          
+          # Track which slugs we've seen
+          current_slugs = set()
+          
+          # Process all .md files in writing/
+          if os.path.exists(writing_dir):
+              for filename in os.listdir(writing_dir):
+                  if filename.endswith('.md') and filename != 'README.md':
+                      slug = filename[:-3]  # Remove .md extension
+                      current_slugs.add(slug)
+                      
+                      # Read the file
+                      with open(os.path.join(writing_dir, filename), 'r') as f:
+                          content = f.read()
+                      
+                      # Parse frontmatter metadata
+                      metadata = parse_frontmatter(content)
+                      
+                      # Extract title from metadata or first # heading
+                      if 'title' in metadata:
+                          title = metadata['title']
+                      else:
+                          title_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
+                          title = title_match.group(1) if title_match else slug.replace('-', ' ').title()
+                      
+                      # Get date from metadata, or use file modification time
+                      if 'date' in metadata:
+                          date = metadata['date']
+                      else:
+                          mod_time = os.path.getmtime(os.path.join(writing_dir, filename))
+                          date = datetime.fromtimestamp(mod_time).strftime("%B %d, %Y")
+                      
+                      # Get description from metadata or extract from content
+                      if 'description' in metadata:
+                          description = metadata['description']
+                      else:
+                          # Remove frontmatter before extracting description
+                          content_without_frontmatter = re.sub(r'^---\s*\n.*?\n---\s*\n', '', content, flags=re.DOTALL)
+                          desc_match = re.search(r'^#\s+.+?\n\n(.+?)(?:\n\n|$)', content_without_frontmatter, re.MULTILINE | re.DOTALL)
+                          description = desc_match.group(1).strip()[:150] if desc_match else ""
+                      
+                      # Copy file to posts/
+                      os.makedirs(posts_dir, exist_ok=True)
+                      with open(os.path.join(posts_dir, filename), 'w') as f:
+                          f.write(content)
+                      
+                      # Update or add to posts.json
+                      existing = next((p for p in posts if p['slug'] == slug), None)
+                      if existing:
+                          existing['title'] = title
+                          existing['date'] = date
+                          existing['description'] = description
+                      else:
+                          posts.insert(0, {
+                              'title': title,
+                              'slug': slug,
+                              'date': date,
+                              'description': description
+                          })
+          
+          # Remove posts that no longer exist in writing/
+          posts = [p for p in posts if p['slug'] in current_slugs]
+          
+          # Save updated posts.json
+          with open(posts_json_path, 'w') as f:
+              json.dump(posts, f, indent=2)
+          
+          print(f"✓ Synced {len(current_slugs)} posts from writing/ to posts/")
+          EOF
+      
+      - name: Sync projects
+        run: |
+          python3 << 'EOF'
+          import os
+          import json
+          import re
+          
+          # Process project files
+          projects_content_dir = "projects-content"
+          projects_json_path = "projects/projects.json"
+          
+          if os.path.exists(projects_json_path):
+              with open(projects_json_path, 'r') as f:
+                  projects = json.load(f)
+          else:
+              projects = []
+          
+          # Track current project titles
+          current_projects = {}
+          
+          # Process all .md files in projects-content/
+          if os.path.exists(projects_content_dir):
+              for filename in os.listdir(projects_content_dir):
+                  if filename.endswith('.md') and filename != 'README.md':
+                      with open(os.path.join(projects_content_dir, filename), 'r') as f:
+                          content = f.read()
+                      
+                      # Extract title (first # heading)
+                      title_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
+                      title = title_match.group(1).strip() if title_match else filename[:-3]
+                      
+                      # Extract URL (look for **URL**: pattern)
+                      url_match = re.search(r'\*\*URL\*\*:\s*(.+?)(?:\n|$)', content)
+                      url = url_match.group(1).strip() if url_match else "#"
+                      
+                      # Extract description (first paragraph after title)
+                      desc_match = re.search(r'^#\s+.+?\n\n(.+?)(?:\n\n|$)', content, re.MULTILINE | re.DOTALL)
+                      description = desc_match.group(1).strip()[:200] if desc_match else ""
+                      
+                      current_projects[title.lower()] = {
+                          'title': title,
+                          'url': url,
+                          'description': description
+                      }
+          
+          # Update projects list
+          # Remove projects that no longer exist
+          projects = [p for p in projects if p['title'].lower() in current_projects]
+          
+          # Add or update projects
+          for title_lower, project_data in current_projects.items():
+              existing = next((p for p in projects if p['title'].lower() == title_lower), None)
+              if existing:
+                  existing['url'] = project_data['url']
+                  existing['description'] = project_data['description']
+              else:
+                  projects.insert(0, project_data)
+          
+          # Save updated projects.json
+          os.makedirs('projects', exist_ok=True)
+          with open(projects_json_path, 'w') as f:
+              json.dump(projects, f, indent=2)
+          
+          print(f"✓ Synced {len(current_projects)} projects from projects-content/ to projects/")
+          EOF
+      
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add posts/ projects/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-sync: Update posts and projects from source folders"
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
