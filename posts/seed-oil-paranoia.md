@@ -1,4 +1,8 @@
-# Forum to table: how seed oil paranoia can radicalize
+---
+title: The California Aggie: Forum to table: how seed oil paranoia can radicalize
+date: November 14, 2024
+description: Opinion piece for The California Aggie examining the connection between seed oil health claims and right-wing radicalization
+---
 
 ## Why distrust of cooking oils has become a rallying cry for the far right
 
